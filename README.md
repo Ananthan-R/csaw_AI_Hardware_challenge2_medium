@@ -8,9 +8,8 @@ Thr trojan is triggered only if the following events take place in the following
 2. The UART Setup register is read twice
 3. The UART FIFO is read twice.
 After this sequential trigger is activated, the next read of the Setup register returns the value 0xdeadbeef and reverts to normal.
-The trojan can be tested by using the tb_wbuart_trojan.v test bench.
-'''powershell
-iverilog -g2012 -o trojan_tb.vvp tb/tb_wbuart_trojan.v rtl/wbuart.v rtl/rxuart.v rtl/txuart.v rtl/ufifo.v rtl/skidbuffer.v rtl/txuartlite.v rtl/rxuartlite.v'''
+The trojan can be tested by using the tb_wbuart_trojan.v test bench.```powershell
+iverilog -g2012 -o trojan_tb.vvp tb/tb_wbuart_trojan.v rtl/wbuart.v rtl/rxuart.v rtl/txuart.v rtl/ufifo.v rtl/skidbuffer.v rtl/txuartlite.v rtl/rxuartlite.v```
 
 This test will show the working of the trojan by highlighting the sequential triggering process and the payload activation.
 ## Summary
